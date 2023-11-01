@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -16,11 +17,13 @@ public class Main {
         String line;
 
         while((line=reader.readLine()) !=null){
+            line = line.replaceAll(",+", ",");
             String[] mean= line.split(",",2);
+            if(!line.isEmpty()){
             dictionary.put(mean[0],mean[1] );
             dictionaryValue.put(mean[1],mean[0]);
-        }
-
+        }}
+        reader.close();
         Scanner forWordScan =new Scanner(System.in);
 
         String word;
